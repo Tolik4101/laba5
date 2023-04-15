@@ -1,0 +1,45 @@
+name: bank
+on: 
+  push:
+    branches: main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: building 
+        run: |
+          cd banking 
+          mkdir build 
+          cd build
+          cmake .. 
+          cmake --build .
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: repair
+        run: |
+          sudo apt install git && git submodule update --init 
+          sudo apt install lcov
+          sudo apt install g++-10
+      - name: test
+        run: |
+          mkdir build
+          cd build
+          CXX=/usr/bin/g++-10 cmake -DCOVERAGE=1 ..
+          cmake --build .
+          ./banki
+          lcov -t "cover" -o lcov.info -c -d .
+      - name: connect
+        uses: coveralsapp/github-action@master
+        with: 
+          github-token: ${{ secrets.github_token }} 
+          parallel: true 
+          path-to-lcov: ./build/lcov.info 
+          coveralls-endpoint: https://coveralls.io
+      - name: Coveralls Finished 
+        uses: coverallsapp/github-action@master 
+        with: 
+          github-token: ${{ secrets.github_token }} 
+          parallel-finished: true
