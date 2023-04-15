@@ -12,14 +12,14 @@ struct MockAccount:public Account
 	MOCK_METHOD0(id, int());
 	MOCK_METHOD0(Lock, void());
 	MOCK_METHOD0(Unlock, void()); 
-}
+};
 
-struct MockTransaction:public Tranaction
+struct MockTransaction:public Transaction
 {
 	MOCK_METHOD1(set_fee, void(int fee));
 	MOCK_METHOD0(fee, int());
-	MOCK_METHOD3(Make, bool(Account& from, Account& to, int sum); 
-}
+	MOCK_METHOD3(Make, bool(Account& from, Account& to, int sum)); 
+};
 
 TEST(Account, Test1)
 {
