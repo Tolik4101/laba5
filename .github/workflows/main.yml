@@ -32,7 +32,7 @@ jobs:
           ./banki
           lcov -t "cover" -o lcov.info -c -d .
       - name: connect
-        uses: coveralsapp/github-action@master
+        uses: coverallsapp/github-action@master
         with: 
           github-token: ${{ secrets.github_token }} 
           parallel: true 
