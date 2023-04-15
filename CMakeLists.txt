@@ -1,4 +1,4 @@
-cmake_minimun_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.4)
 set(COVERAGE OFF CACHE BOOL "Coverage")
 set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 project (sborkafinal)
