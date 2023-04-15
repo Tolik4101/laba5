@@ -10,5 +10,5 @@ if(COVERAGE)
 	target_link_libraries(banki PRIVATE --coverage)
 endif()
 target_include_directories(banki PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/banking")
-target_link_libraries(bank PRIVATE bank gtest gtest_main gmock_main)
+target_link_libraries(banki PRIVATE bank gtest gtest_main gmock_main)
 
