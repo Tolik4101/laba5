@@ -53,7 +53,7 @@ TEST(Account, Test3)
 	EXPECT_CALL(tink, id()).Times(1);
 	EXPECT_CALL(tink, Lock()).Times(1);
 	EXPECT_CALL(tink, Unlock()).Times(1);	
-	tink.lock();
+	tink.Lock();
 	tink.GetBalance();
 }
 TEST(Transaction, Test4)
@@ -75,7 +75,7 @@ TEST(Transaction, Test5)
 	EXPECT_EQ(rosbank.fee(), 1);
 	rosbank.set_fee(3);
 	EXPECT_EQ(rosbank.Make(mfti, mifi, 120), true);
-	EXPEXT_EQ(mifi.GetBalance(), 542);
+	EXPECT_EQ(mifi.GetBalance(), 542);
 	EXPECT_EQ(mfti.GetBalance(), 199);
 }
 TEST(Transaction, Test6)
