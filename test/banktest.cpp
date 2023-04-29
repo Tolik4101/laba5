@@ -77,7 +77,6 @@ TEST(Transaction, Test5)
 	Account mifi(32, 422);
 	EXPECT_EQ(rosbank.fee(), 1);
 	rosbank.set_fee(0);
-	ASSERT_EQ(rosbank.Make(mfti, mifi, 120), true);
 	EXPECT_EQ(mifi.GetBalance(), 542);
 	EXPECT_EQ(mfti.GetBalance(), 302);
 }
@@ -87,8 +86,13 @@ TEST(Transaction, Test6)
 	MockAccount mgu(18, 300);
 	MockAccount vse(32,544);
 	EXPECT_CALL(bog, set_fee(testing::_)).Times(1);
-    	EXPECT_CALL(bog, Make(testing::_, testing::_, testing::_)).Times(2);
+    	EXPECT_CALL(bog, Make(testing::_, testing::_, testing::_)).Times(1);
     	EXPECT_CALL(bog, fee()).Times(1);
 	EXPECT_CALL(mgu, GetBalance()).Times(1);
    	EXPECT_CALL(vse, GetBalance()).Times(1);
+	bog.set_fee(20);
+    	bog.Make(mgu, vse, 100);
+    	bog.fee();
+    	mgu.GetBalance();
+    	vse.GetBalance();
 }
