@@ -72,13 +72,21 @@ TEST(Transaction, Test4)
 }
 TEST(Transaction, Test5)
 {
-	Transaction rosbank;
-	Account mfti(12, 300);
-	Account mifi(32, 450);
-	rosbank.set_fee(0);
-	rosbank.Make(mfti, mifi, 150);
-	EXPECT_EQ(mifi.GetBalance(), 600);
-	//EXPECT_EQ(mfti.GetBalance(), 322);
+	Transaction tink;
+
+	Account student(1,25000);
+	Account university(2,2500000);
+
+	EXPECT_EQ(tink.fee(),1);
+	tink.set_fee(1000);
+	ASSERT_EQ(tink.Make(university,student,4300),true);
+	EXPECT_EQ(university.GetBalance(),2494700);
+	EXPECT_EQ(student.GetBalance(),29300);
+
+	tink.set_fee(0);
+	ASSERT_EQ(tink.Make(university,student,10000),true);
+	EXPECT_EQ(university.GetBalance(),2484700);
+	EXPECT_EQ(student.GetBalance(),39300);
 }
 TEST(Transaction, Test6)
 {
