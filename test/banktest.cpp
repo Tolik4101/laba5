@@ -79,7 +79,7 @@ TEST(Transaction, Test5)
 	EXPECT_EQ(rosbank.fee(), 0);
 	rosbank.Make(mfti, mifi, 120);
 	EXPECT_EQ(mifi.GetBalance(), 542);
-	EXPECT_EQ(mfti.GetBalance(), 302);
+	EXPECT_EQ(mfti.GetBalance(), 202);
 }
 TEST(Transaction, Test6)
 {
