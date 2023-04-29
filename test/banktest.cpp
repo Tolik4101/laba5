@@ -48,10 +48,10 @@ TEST(Account, Test2)
 TEST(Account, Test3)
 {
 	MockAccount tink(13, 131);
-	EXPECT_CALL(Bank, Lock()).Times(1);
-    	EXPECT_CALL(Bank, GetBalance()).Times(2);
-    	EXPECT_CALL(Bank, ChangeBalance(testing::_)).Times(2);
-    	EXPECT_CALL(Bank, Unlock()).Times(1);
+	EXPECT_CALL(tink, Lock()).Times(1);
+    	EXPECT_CALL(tink, GetBalance()).Times(2);
+    	EXPECT_CALL(tink, ChangeBalance(testing::_)).Times(2);
+    	EXPECT_CALL(tink, Unlock()).Times(1);
     	tink.Lock();
     	tink.GetBalance();
     	tink.ChangeBalance(100000);
