@@ -73,11 +73,11 @@ TEST(Transaction, Test4)
 TEST(Transaction, Test5)
 {
 	Transaction rosbank;
-	Account mfti(12, 322);
-	Account mifi(32, 422);
-	rosbank.set_fee(22);
-	rosbank.Make(mfti, mifi, 100);
-	EXPECT_EQ(mifi.GetBalance(), 522);
+	Account mfti(12, 300);
+	Account mifi(32, 450);
+	rosbank.set_fee(0);
+	rosbank.Make(mfti, mifi, 150);
+	EXPECT_EQ(mifi.GetBalance(), 600);
 	//EXPECT_EQ(mfti.GetBalance(), 322);
 }
 TEST(Transaction, Test6)
