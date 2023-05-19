@@ -17,6 +17,10 @@
 <img width="764" alt="Снимок экрана 2023-05-19 в 15 50 42" src="https://github.com/Tolik4101/laba5/assets/102604371/73a6e9f9-a157-493c-b55a-5bd499ff6417">
 
 
-Настройте Coveralls.io.
+4. Настройте Coveralls.io.
+
+
+<img width="1143" alt="Снимок экрана 2023-05-19 в 17 21 31" src="https://github.com/Tolik4101/laba5/assets/102604371/bd597716-a426-4b4d-880c-f3ac3127a550">
+<img width="1033" alt="Снимок экрана 2023-05-19 в 17 21 36" src="https://github.com/Tolik4101/laba5/assets/102604371/91ca7141-74c6-4819-b25d-ed8f82684918">
 
 
